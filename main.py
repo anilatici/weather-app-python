@@ -12,32 +12,21 @@ API_KEY = os.getenv("API_KEY")
 st.set_page_config(page_title="Weather App", page_icon=":partly_sunny:")
 
 # Custom CSS styles
-st.markdown(
-    """
-    <style>
-        .main {
-            background-color: #313333;
-        }
-        .stButton>button {
-            background-color: #83f2bb;
-            color: #254535;
-            padding: 10px 24px;
-            font-size: 16px;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
+with open('css\styling.css') as f:
+    css = f.read()
+st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
 # Streamlit
 st.write("Weather App")
 st.write("This app is built using Streamlit and Python")
 
 city = st.text_input("Enter a city name", "")
+col1, col2 = st.columns([.25,1])
 
-button = st.button("Get Weather")
-clear = st.button("Clear")
+with col1:
+    button = st.button("Get Weather")
+with col2:   
+    clear = st.button("Clear")
 
 # get CURRENT weather data
 if button:

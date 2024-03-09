@@ -1,0 +1,13 @@
+.main {
+    background-color: #313333;
+}
+.stButton>button {
+    background-color: #83f2bb;
+    color: #254535;
+    padding: 10px 24px;
+    font-size: 16px;
+}
+.stButton>button:hover {
+    border-color: #0f1c16;
+    color: #254535;
+}
