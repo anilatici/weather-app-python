@@ -1,13 +1,26 @@
 .main {
     background-color: #313333;
 }
+/* Button styles */
 .stButton>button {
-    background-color: #83f2bb;
-    color: #254535;
+    background-color: #254535;
+    color: #FAFAFA;
     padding: 10px 24px;
     font-size: 16px;
 }
+
+/* Hover effect for buttons */
 .stButton>button:hover {
     border-color: #0f1c16;
-    color: #254535;
+    color: #FAFAFA;
+}
+
+.stButton>button:focus-visible {
+    background-color: #254535;
+    color: #FAFAFA;
+}
+
+
+div[data-testid="InputInstructions"] > span:nth-child(1) {
+    visibility: hidden;
 }
