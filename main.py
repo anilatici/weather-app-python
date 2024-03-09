@@ -38,7 +38,8 @@ if button:
             st.write("Error: " + str(response.status_code))
             st.write(data["error"]["message"])
         else:
-            st.write("Current Weather in " + city)
+            st.write("Current Weather in ")
+            st.title(city.upper())
             st.write("Temperature: " + str(data["current"]["temp_c"]) + "°C")
             st.write("Condition: " + data["current"]["condition"]["text"])
             st.write("Wind: " + str(data["current"]["wind_kph"]) + " km/h")
