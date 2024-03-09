@@ -1,10 +1,8 @@
 import os
 import requests
-from dotenv import load_dotenv
 import streamlit as st
 
 # load env file
-load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
 # Set page configuration
