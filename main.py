@@ -8,11 +8,34 @@ import streamlit as st
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
+# Set page configuration
+st.set_page_config(page_title="Weather App", page_icon=":partly_sunny:")
+
+# Custom CSS styles
+st.markdown(
+    """
+    <style>
+        .main {
+            background-color: #313333;
+        }
+        .stButton>button {
+            background-color: #83f2bb;
+            color: #254535;
+            padding: 10px 24px;
+            font-size: 16px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # Streamlit
 st.write("Weather App")
 st.write("This app is built using Streamlit and Python")
 
 city = st.text_input("Enter a city name", "")
+
 button = st.button("Get Weather")
 clear = st.button("Clear")
 
@@ -36,3 +59,5 @@ if button:
         if "error" in data:
             st.write("Error: " + str(response.status_code))
             st.write(data["error"]["message"])
+if clear:
+    st.session_state.clear()
