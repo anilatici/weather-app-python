@@ -20,7 +20,7 @@ st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 st.write("Weather App")
 st.write("This app is built using Streamlit and Python")
 
-city = st.text_input("Enter a city name", "")
+city = st.text_input("","",placeholder="Enter city name")
 col1, col2 = st.columns([.25,1])
 
 with col1:
